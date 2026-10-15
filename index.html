@@ -9,6 +9,80 @@
   <meta name="description" content="Nova Digital builds modern websites, digital experiences, and practical automation solutions for growing businesses.">
 
   <style>
+    
+.client-enquiry {
+  padding: 100px 20px;
+  background: #0b1120;
+  color: #fff;
+}
+
+.enquiry-container {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.enquiry-label {
+  color: #38bdf8;
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.client-enquiry h2 {
+  font-size: clamp(32px, 5vw, 48px);
+  margin: 15px 0;
+}
+
+.client-enquiry p {
+  color: #94a3b8;
+  margin-bottom: 35px;
+}
+
+.client-enquiry form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.client-enquiry label {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.client-enquiry input,
+.client-enquiry select,
+.client-enquiry textarea {
+  width: 100%;
+  padding: 15px;
+  background: #111c30;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  color: white;
+  font-size: 14px;
+}
+
+.client-enquiry input:focus,
+.client-enquiry select:focus,
+.client-enquiry textarea:focus {
+  outline: 2px solid #38bdf8;
+}
+
+.client-enquiry button {
+  margin-top: 15px;
+  padding: 16px;
+  background: #38bdf8;
+  color: #07111f;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.client-enquiry button:hover {
+  background: #7dd3fc;
+}
+
     :root {
       --bg: #080d1b;
       --bg-light: #101a30;
@@ -1050,6 +1124,98 @@
       });
     }
   </script>
+
+<section id="client-enquiry" class="client-enquiry">
+  <div class="enquiry-container">
+    <span class="enquiry-label">START YOUR PROJECT</span>
+    <h2>Let's Build Your Website</h2>
+    <p>
+      Tell us about your business and the website
+      you need. We'll discuss your project.
+    </p>
+
+    <form id="clientEnquiryForm">
+      <label for="clientName">Your Name</label>
+      <input id="clientName" type="text" required
+             placeholder="Enter your name">
+
+      <label for="businessName">Business Name</label>
+      <input id="businessName" type="text" required
+             placeholder="Your business name">
+
+      <label for="websiteType">Website Type</label>
+      <select id="websiteType" required>
+        <option value="">Select website type</option>
+        <option>Restaurant Website</option>
+        <option>Beauty Salon Website</option>
+        <option>Business Website</option>
+        <option>Portfolio Website</option>
+        <option>Other</option>
+      </select>
+
+      <label for="clientBudget">Estimated Budget</label>
+      <select id="clientBudget" required>
+        <option value="">Select your budget</option>
+        <option>LKR 15,000 - 30,000</option>
+        <option>LKR 30,000 - 50,000</option>
+        <option>LKR 50,000+</option>
+        <option>Need a quotation</option>
+      </select>
+
+      <label for="projectDetails">Project Details</label>
+      <textarea id="projectDetails" rows="4"
+        placeholder="Tell us what you need..."></textarea>
+
+      <button type="submit">
+        Send Enquiry via WhatsApp →
+      </button>
+    </form>
+  </div>
+</section>
+
+<script>
+  document.getElementById("clientEnquiryForm")
+    .addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const name =
+        document.getElementById("clientName").value.trim();
+
+      const business =
+        document.getElementById("businessName").value.trim();
+
+      const type =
+        document.getElementById("websiteType").value;
+
+      const budget =
+        document.getElementById("clientBudget").value;
+
+      const details =
+        document.getElementById("projectDetails").value.trim();
+
+      const message =
+        `Hello Nova Digital!%0A%0A` +
+        `Name: ${encodeURIComponent(name)}%0A` +
+        `Business: ${encodeURIComponent(business)}%0A` +
+        `Website Type: ${encodeURIComponent(type)}%0A` +
+        `Budget: ${encodeURIComponent(budget)}%0A` +
+        `Details: ${encodeURIComponent(details)}`;
+
+      // Replace with your business WhatsApp number
+      const phone = "94770186741";
+
+      if (!/^94\d{9}$/.test(phone)) {
+        alert("Please configure the business WhatsApp number.");
+        return;
+      }
+
+      window.open(
+        `https://wa.me/${phone}?text=${message}`,
+        "_blank",
+        "noopener,noreferrer"
+      );
+    });
+</script>
 
 </body>
 </html>

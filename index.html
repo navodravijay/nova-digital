@@ -4,10 +4,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Nova Digital builds modern websites and digital solutions for growing businesses.">
-  <title>Nova Digital | Websites & Digital Solutions</title>
+
+  <title>Nova Digital | Websites, Automation & AI</title>
+  <meta name="description" content="Nova Digital builds modern websites, digital experiences, and practical automation solutions for growing businesses.">
 
   <style>
+    :root {
+      --bg: #080d1b;
+      --bg-light: #101a30;
+      --card: #111b30;
+      --text: #f4f7ff;
+      --muted: #9aa9c2;
+      --blue: #4d8dff;
+      --cyan: #4de0ff;
+      --border: rgba(255,255,255,.09);
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -19,184 +31,657 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background: #0b1120;
-      color: #f8fafc;
-      line-height: 1.6;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
     }
 
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    section {
+      padding: 100px 0;
+      scroll-margin-top: 80px;
+    }
+
+    /* Navigation */
+
     header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(8,13,27,.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .navbar {
+      min-height: 76px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 22px 8%;
-      border-bottom: 1px solid #263247;
+      justify-content: space-between;
+      gap: 20px;
     }
 
     .logo {
       font-size: 24px;
-      font-weight: bold;
-      color: #38bdf8;
+      font-weight: 800;
+      letter-spacing: -1px;
     }
 
-    nav a {
-      color: #dbeafe;
-      text-decoration: none;
-      margin-left: 22px;
+    .logo span {
+      color: var(--cyan);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
       font-size: 14px;
+      transition: color .3s;
     }
 
-    nav a:hover {
-      color: #38bdf8;
+    .nav-links a:hover {
+      color: white;
     }
+
+    .menu-btn {
+      display: none;
+      color: white;
+      background: none;
+      border: 1px solid var(--border);
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 22px;
+    }
+
+    /* Buttons */
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 24px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 14px;
+      transition: transform .25s, background .25s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue), #3158dc);
+      color: white;
+      box-shadow: 0 10px 30px rgba(77,141,255,.2);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,.2);
+      color: white;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,.06);
+    }
+
+    /* Hero */
 
     .hero {
-      text-align: center;
-      padding: 110px 20px 100px;
-      background: radial-gradient(
-        ellipse at top,
-        #172e53 0%,
-        #0b1120 70%
-      );
+      position: relative;
+      min-height: 680px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 85% 40%,
+          rgba(41,96,220,.23), transparent 45%),
+        radial-gradient(ellipse at 15% 80%,
+          rgba(0,200,255,.07), transparent 40%);
     }
 
-    .tag {
-      color: #38bdf8;
-      letter-spacing: 2px;
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 7px 14px;
+      border: 1px solid rgba(77,224,255,.25);
+      background: rgba(77,224,255,.06);
+      border-radius: 30px;
+      color: var(--cyan);
       font-size: 12px;
-      font-weight: bold;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
 
     h1 {
-      font-size: clamp(38px, 6vw, 66px);
-      line-height: 1.15;
-      margin: 22px auto;
-      max-width: 850px;
+      margin-top: 22px;
+      font-size: clamp(42px, 5vw, 72px);
+      line-height: 1.1;
+      letter-spacing: -2.5px;
     }
 
-    h1 span {
-      color: #38bdf8;
+    .gradient-text {
+      background: linear-gradient(100deg, #62a5ff, #55e3ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
 
     .hero p {
-      color: #b8c4d9;
-      max-width: 620px;
-      margin: 0 auto 30px;
+      margin: 25px 0 32px;
+      max-width: 520px;
+      color: var(--muted);
+      font-size: 17px;
     }
 
-    .button {
-      display: inline-block;
-      background: #0284c7;
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    /* Hero visual made with CSS */
+
+    .hero-visual {
+      position: relative;
+      height: 420px;
+      display: grid;
+      place-items: center;
+    }
+
+    .visual-glow {
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: #2868ff;
+      filter: blur(95px);
+      opacity: .3;
+    }
+
+    .visual-ring {
+      position: absolute;
+      width: 330px;
+      height: 330px;
+      border: 1px solid rgba(95,173,255,.3);
+      border-radius: 50%;
+      transform: rotateX(65deg) rotateZ(-25deg);
+    }
+
+    .visual-ring.second {
+      width: 260px;
+      height: 260px;
+      transform: rotateY(65deg) rotateZ(25deg);
+    }
+
+    .visual-core {
+      position: relative;
+      width: 220px;
+      height: 220px;
+      display: grid;
+      place-items: center;
+      border-radius: 48px;
+      transform: rotate(-12deg);
+      background:
+        linear-gradient(145deg,
+          rgba(85,190,255,.25),
+          rgba(35,62,148,.12));
+      border: 1px solid rgba(130,200,255,.35);
+      box-shadow:
+        inset 0 0 40px rgba(60,130,255,.14),
+        0 30px 80px rgba(0,0,0,.4);
+      animation: float 5s ease-in-out infinite;
+    }
+
+    .visual-core span {
+      font-size: 88px;
+      font-weight: 900;
       color: white;
-      padding: 13px 25px;
-      border-radius: 7px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.2s;
+      text-shadow: 0 0 40px rgba(77,224,255,.5);
     }
 
-    .button:hover {
-      background: #0369a1;
-      transform: translateY(-2px);
+    .floating-tag {
+      position: absolute;
+      padding: 12px 18px;
+      background: rgba(19,33,59,.9);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      font-size: 13px;
+      box-shadow: 0 15px 40px rgba(0,0,0,.3);
     }
 
-    section {
-      padding: 75px 8%;
+    .tag-one {
+      top: 45px;
+      right: 0;
     }
 
-    .section-title {
+    .tag-two {
+      bottom: 45px;
+      left: 0;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(-12deg); }
+      50% { transform: translateY(-18px) rotate(-12deg); }
+    }
+
+    /* Section headings */
+
+    .section-heading {
+      max-width: 680px;
+      margin-bottom: 45px;
+    }
+
+    .section-heading.center {
       text-align: center;
-      font-size: 34px;
-      margin-bottom: 12px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .section-description {
-      text-align: center;
-      color: #94a3b8;
-      margin-bottom: 38px;
+    .section-heading h2 {
+      margin: 15px 0;
+      font-size: clamp(30px, 4vw, 44px);
+      letter-spacing: -1.5px;
+      line-height: 1.2;
     }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    /* Services */
 
     .services {
+      background: var(--bg-light);
+    }
+
+    .card-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 22px;
     }
 
     .service-card {
-      background: #111c30;
-      border: 1px solid #29374d;
-      border-radius: 12px;
-      padding: 28px;
-      transition: 0.2s;
+      padding: 32px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: linear-gradient(150deg,
+        rgba(255,255,255,.045),
+        rgba(255,255,255,.01));
+      transition: transform .3s, border-color .3s;
     }
 
     .service-card:hover {
-      border-color: #38bdf8;
-      transform: translateY(-4px);
+      transform: translateY(-8px);
+      border-color: rgba(77,141,255,.5);
     }
 
-    .service-card .icon {
-      font-size: 30px;
+    .service-icon {
+      width: 55px;
+      height: 55px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: rgba(77,141,255,.13);
+      font-size: 26px;
+      margin-bottom: 25px;
     }
 
     .service-card h3 {
-      margin: 14px 0 10px;
+      font-size: 21px;
+      margin-bottom: 12px;
     }
 
     .service-card p {
-      color: #a7b4c8;
+      color: var(--muted);
       font-size: 14px;
     }
 
-    .about {
-      background: #101a2b;
-      text-align: center;
+    /* Portfolio */
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
     }
 
-    .about p {
-      max-width: 700px;
-      color: #b8c4d9;
-      margin: 18px auto 0;
+    .project-card {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      background: var(--card);
     }
+
+    .project-preview {
+      height: 230px;
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .preview-one {
+      background: linear-gradient(135deg, #182f5c, #183e77, #0b1428);
+    }
+
+    .preview-two {
+      background: linear-gradient(135deg, #133b44, #145f69, #0a1823);
+    }
+
+    .preview-window {
+      width: 76%;
+      height: 160px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.2);
+      background: rgba(9,17,34,.8);
+      box-shadow: 0 20px 50px rgba(0,0,0,.3);
+      padding: 14px;
+    }
+
+    .window-dots {
+      display: flex;
+      gap: 5px;
+      margin-bottom: 17px;
+    }
+
+    .window-dots i {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #6a85aa;
+    }
+
+    .mock-line {
+      height: 9px;
+      width: 60%;
+      border-radius: 5px;
+      background: rgba(255,255,255,.65);
+      margin-bottom: 10px;
+    }
+
+    .mock-line.small {
+      width: 40%;
+      background: rgba(77,224,255,.5);
+    }
+
+    .mock-boxes {
+      display: flex;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .mock-boxes div {
+      flex: 1;
+      height: 42px;
+      border-radius: 6px;
+      background: rgba(77,141,255,.18);
+    }
+
+    .project-info {
+      padding: 25px;
+    }
+
+    .project-info h3 {
+      margin-bottom: 8px;
+    }
+
+    .project-info p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .project-label {
+      color: var(--cyan);
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    /* About */
+
+    .about {
+      background: var(--bg-light);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 70px;
+    }
+
+    .about-visual {
+      min-height: 340px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at center,
+          rgba(77,141,255,.18), transparent 65%),
+        #0d1729;
+    }
+
+    .about-visual span {
+      font-size: clamp(50px, 9vw, 100px);
+      font-weight: 900;
+      letter-spacing: -8px;
+      color: var(--cyan);
+    }
+
+    .about-text h2 {
+      font-size: clamp(30px, 4vw, 43px);
+      line-height: 1.2;
+      margin: 18px 0;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    /* Contact */
 
     .contact {
       text-align: center;
     }
 
+    .contact-panel {
+      padding: 70px 25px;
+      border-radius: 24px;
+      border: 1px solid rgba(77,141,255,.25);
+      background:
+        radial-gradient(ellipse at 50% 100%,
+          rgba(40,100,230,.22), transparent 70%),
+        #101a30;
+    }
+
+    .contact-panel h2 {
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.2;
+      margin: 18px 0;
+    }
+
+    .contact-panel p {
+      max-width: 520px;
+      margin: 0 auto 30px;
+      color: var(--muted);
+    }
+
+    /* Footer */
+
     footer {
-      text-align: center;
-      padding: 25px;
-      color: #94a3b8;
-      border-top: 1px solid #263247;
+      border-top: 1px solid var(--border);
+      padding: 30px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    footer p {
+      color: var(--muted);
       font-size: 13px;
     }
 
-    @media (max-width: 700px) {
-      header {
-        flex-direction: column;
-        gap: 15px;
-        padding: 20px 5%;
-      }
+    /* Scroll reveal */
 
-      nav a {
-        margin: 0 8px;
-        font-size: 13px;
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity .7s, transform .7s;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Mobile */
+
+    @media (max-width: 800px) {
+      section {
+        padding: 70px 0;
       }
 
       .hero {
-        padding: 75px 20px;
+        min-height: auto;
+        padding: 90px 0 60px;
       }
 
-      section {
-        padding: 55px 6%;
+      .hero-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
       }
 
-      .services {
+      .hero-visual {
+        height: 330px;
+      }
+
+      .card-grid {
         grid-template-columns: 1fr;
       }
 
-      .section-title {
-        font-size: 28px;
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        width: 100%;
+        background: #0b1426;
+        border-bottom: 1px solid var(--border);
+        padding: 25px 5%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .about-visual {
+        min-height: 240px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 40px;
+        letter-spacing: -1.5px;
+      }
+
+      .hero-visual {
+        height: 280px;
+      }
+
+      .visual-core {
+        width: 160px;
+        height: 160px;
+      }
+
+      .visual-core span {
+        font-size: 60px;
+      }
+
+      .visual-ring {
+        width: 220px;
+        height: 220px;
+      }
+
+      .visual-ring.second {
+        width: 180px;
+        height: 180px;
+      }
+
+      .floating-tag {
+        font-size: 11px;
+        padding: 9px 12px;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .contact-panel {
+        padding: 50px 20px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .visual-core {
+        animation: none;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
       }
     }
   </style>
@@ -204,106 +689,334 @@
 
 <body>
 
+  <!-- NAVIGATION -->
   <header>
-    <div class="logo">NOVA DIGITAL.</div>
+    <nav class="navbar container">
+      <a href="#home" class="logo">NOVA<span>.</span>DIGITAL</a>
 
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+      <button class="menu-btn" id="menuBtn"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="navLinks">
+        &#9776;
+      </button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Our Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
     </nav>
   </header>
 
   <main>
+
+    <!-- HERO -->
     <section class="hero" id="home">
-      <div class="tag">SMART DIGITAL SOLUTIONS</div>
+      <div class="container hero-grid">
 
-      <h1>
-        Build Your Business<br>
-        With <span>Digital Power.</span>
-      </h1>
+        <div>
+          <span class="eyebrow">Creative Digital Solutions</span>
 
-      <p>
-        We help growing businesses establish a strong online
-        presence with modern websites, smart automation,
-        and practical digital solutions.
-      </p>
+          <h1>
+            Digital Experiences.
+            <span class="gradient-text">Built to Grow.</span>
+          </h1>
 
-      <a class="button" href="#services">
-        Explore Our Services →
-      </a>
-    </section>
-
-    <section id="services">
-      <h2 class="section-title">Our Services</h2>
-
-      <p class="section-description">
-        Simple technology. Powerful business solutions.
-      </p>
-
-      <div class="services">
-        <article class="service-card">
-          <div class="icon">🌐</div>
-          <h3>Website Development</h3>
           <p>
-            Modern, responsive websites designed to showcase
-            your business and connect with customers.
+            We create modern websites and explore smart
+            automation and AI-powered solutions to help
+            businesses build a stronger digital presence.
           </p>
-        </article>
 
-        <article class="service-card">
-          <div class="icon">⚙️</div>
-          <h3>Business Automation</h3>
-          <p>
-            Reduce repetitive tasks with useful tools,
-            automated reports, and smarter workflows.
-          </p>
-        </article>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">
+              Start a Project &rarr;
+            </a>
 
-        <article class="service-card">
-          <div class="icon">🤖</div>
-          <h3>AI Solutions</h3>
-          <p>
-            Explore practical AI assistants and digital
-            tools that help businesses work more efficiently.
-          </p>
-        </article>
+            <a href="#portfolio" class="btn btn-outline">
+              Explore Our Work
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="visual-glow"></div>
+          <div class="visual-ring"></div>
+          <div class="visual-ring second"></div>
+
+          <div class="visual-core">
+            <span>ND</span>
+          </div>
+
+          <div class="floating-tag tag-one">
+            &#10022; Modern Websites
+          </div>
+
+          <div class="floating-tag tag-two">
+            &#9889; Smart Digital Solutions
+          </div>
+        </div>
+
       </div>
     </section>
 
+    <!-- SERVICES -->
+    <section class="services" id="services">
+      <div class="container">
+
+        <div class="section-heading center reveal">
+          <span class="eyebrow">What We Do</span>
+          <h2>Solutions for a Digital World</h2>
+          <p>
+            From modern websites to smarter digital workflows,
+            we focus on practical solutions for growing brands.
+          </p>
+        </div>
+
+        <div class="card-grid">
+
+          <article class="service-card reveal">
+            <div class="service-icon">&#128187;</div>
+            <h3>Website Development</h3>
+            <p>
+              Responsive business websites, landing pages,
+              and portfolio websites designed to look
+              professional across devices.
+            </p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">&#9889;</div>
+            <h3>Business Automation</h3>
+            <p>
+              Exploring practical ways to simplify repetitive
+              tasks and improve everyday business workflows.
+            </p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">&#129302;</div>
+            <h3>AI Solutions</h3>
+            <p>
+              Exploring AI-assisted tools and digital
+              experiences tailored to real business needs.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="eyebrow">Portfolio</span>
+          <h2>Selected Concepts</h2>
+          <p>
+            A look at the types of digital experiences
+            we are building and exploring.
+          </p>
+        </div>
+
+        <div class="portfolio-grid">
+
+          <article class="project-card reveal">
+            <div class="project-preview preview-one">
+              <div class="preview-window">
+                <div class="window-dots">
+                  <i></i><i></i><i></i>
+                </div>
+                <div class="mock-line"></div>
+                <div class="mock-line small"></div>
+                <div class="mock-boxes">
+                  <div></div><div></div><div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-info">
+              <div class="project-label">DESIGN CONCEPT</div>
+              <h3>Business Website Concept</h3>
+              <p>
+                A clean, modern website layout for
+                a growing business.
+              </p>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-preview preview-two">
+              <div class="preview-window">
+                <div class="window-dots">
+                  <i></i><i></i><i></i>
+                </div>
+                <div class="mock-line"></div>
+                <div class="mock-line small"></div>
+                <div class="mock-boxes">
+                  <div></div><div></div><div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-info">
+              <div class="project-label">DESIGN CONCEPT</div>
+              <h3>Digital Dashboard Concept</h3>
+              <p>
+                A simple interface concept for displaying
+                useful business information.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
     <section class="about" id="about">
-      <h2 class="section-title">Technology Made Simple</h2>
+      <div class="container about-grid">
 
-      <p>
-        At Nova Digital, our goal is to make digital technology
-        more accessible to small businesses. We focus on clean
-        design, useful features, and solutions built around
-        real customer needs.
-      </p>
+        <div class="about-visual reveal" aria-hidden="true">
+          <span>ND.</span>
+        </div>
+
+        <div class="about-text reveal">
+          <span class="eyebrow">About Nova Digital</span>
+
+          <h2>
+            Technology Meets
+            <span class="gradient-text">Creative Thinking.</span>
+          </h2>
+
+          <p>
+            Nova Digital is an emerging digital brand
+            focused on building useful and visually
+            engaging web experiences.
+          </p>
+
+          <p>
+            Our approach combines modern design,
+            practical development, and curiosity
+            about new technologies.
+          </p>
+
+          <a href="#contact" class="btn btn-outline">
+            Get in Touch &rarr;
+          </a>
+        </div>
+
+      </div>
     </section>
 
+    <!-- CONTACT -->
     <section class="contact" id="contact">
-      <h2 class="section-title">Ready to Grow?</h2>
+      <div class="container">
 
-      <p class="section-description">
-        Let's discuss a digital solution for your business.
-      </p>
+        <div class="contact-panel reveal">
+          <span class="eyebrow">Let's Connect</span>
 
-    <a
-  class="button"
-  href="https://wa.me/94770186741"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  Contact Us on WhatsApp →
-</a>
+          <h2>
+            Have a Project
+            <span class="gradient-text">in Mind?</span>
+          </h2>
+
+          <p>
+            Looking for a modern website or interested
+            in discussing a digital project?
+            Let's talk about your idea.
+          </p>
+
+          <!-- REPLACE THE NUMBER BELOW -->
+          <a
+            href="https://wa.me/94770186741?text=Hello%20Nova%20Digital%2C%20I%20would%20like%20to%20discuss%20a%20project."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary"
+          >
+            Chat on WhatsApp &rarr;
+          </a>
+        </div>
+
+      </div>
     </section>
+
   </main>
 
+  <!-- FOOTER -->
   <footer>
-    © 2026 Nova Digital. 
+    <div class="container footer-inner">
+
+      <a href="#home" class="logo">NOVA<span>.</span>DIGITAL</a>
+
+      <p>
+        &copy; <span id="year"></span> Nova Digital.
+        All rights reserved.
+      </p>
+
+    </div>
   </footer>
+
+  <script>
+    // Automatically update the footer year
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    // Mobile navigation menu
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("open");
+
+      menuBtn.setAttribute("aria-expanded", isOpen);
+      menuBtn.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation menu" : "Open navigation menu"
+      );
+    });
+
+    // Close mobile menu after clicking a link
+    document.querySelectorAll(".nav-links a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("open");
+        menuBtn.setAttribute("aria-expanded", "false");
+        menuBtn.setAttribute(
+          "aria-label",
+          "Open navigation menu"
+        );
+      });
+    });
+
+    // Reveal sections when scrolling
+    const revealElements =
+      document.querySelectorAll(".reveal");
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.08
+      });
+
+      revealElements.forEach(function (element) {
+        observer.observe(element);
+      });
+    } else {
+      revealElements.forEach(function (element) {
+        element.classList.add("visible");
+      });
+    }
+  </script>
 
 </body>
 </html>

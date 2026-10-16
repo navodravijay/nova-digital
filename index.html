@@ -758,6 +758,220 @@
         transition: none;
       }
     }
+    
+/* ===== NOVA DIGITAL PRICING ===== */
+
+.pricing-section {
+  padding: 110px 20px;
+  background: #081326;
+  color: #ffffff;
+  scroll-margin-top: 90px;
+}
+
+.pricing-container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.pricing-heading {
+  text-align: center;
+  margin-bottom: 65px;
+}
+
+.pricing-label {
+  display: inline-block;
+  color: #38bdf8;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+
+.pricing-heading h2 {
+  color: #ffffff;
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+.pricing-heading p {
+  color: #94a3b8;
+  font-size: 15px;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+  align-items: stretch;
+}
+
+.pricing-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 38px 28px;
+  background: #111e34;
+  border: 1px solid #263650;
+  border-radius: 16px;
+  transition: transform .3s ease,
+              border-color .3s ease,
+              box-shadow .3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-8px);
+  border-color: #38bdf8;
+  box-shadow: 0 20px 45px rgba(0,0,0,.2);
+}
+
+.pricing-featured {
+  border: 2px solid #38bdf8;
+  background: #13253e;
+}
+
+.pricing-badge {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #38bdf8;
+  color: #07111f;
+  padding: 7px 17px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.pricing-type {
+  color: #38bdf8;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.pricing-card h3 {
+  color: #ffffff;
+  font-size: 23px;
+  margin-bottom: 22px;
+}
+
+.pricing-price {
+  color: #ffffff;
+  font-size: clamp(30px, 3vw, 39px);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.pricing-price small {
+  color: #94a3b8;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.pricing-description {
+  color: #94a3b8;
+  font-size: 14px;
+  min-height: 52px;
+  margin-bottom: 28px;
+}
+
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 35px;
+  flex: 1;
+}
+
+.pricing-features li {
+  color: #cbd5e1;
+  font-size: 13px;
+  padding: 11px 0 11px 25px;
+  border-bottom: 1px solid #263650;
+  position: relative;
+}
+
+.pricing-features li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #38bdf8;
+  font-weight: 800;
+}
+
+.pricing-btn {
+  display: block;
+  text-align: center;
+  padding: 15px;
+  border: 1px solid #38bdf8;
+  border-radius: 8px;
+  color: #38bdf8;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: .3s ease;
+}
+
+.pricing-btn:hover,
+.pricing-btn-featured {
+  background: #38bdf8;
+  color: #07111f;
+}
+
+.pricing-btn-featured:hover {
+  background: #7dd3fc;
+  border-color: #7dd3fc;
+}
+
+.pricing-note {
+  text-align: center;
+  color: #94a3b8;
+  font-size: 12px;
+  margin-top: 40px;
+  line-height: 1.8;
+}
+
+/* TABLET */
+
+@media (max-width: 950px) {
+  .pricing-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pricing-featured {
+    grid-row: 1;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+  .pricing-section {
+    padding: 80px 16px;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .pricing-card {
+    padding: 32px 24px;
+  }
+
+  .pricing-featured {
+    grid-row: auto;
+  }
+
+  .pricing-heading {
+    margin-bottom: 50px;
+  }
+}
+
   </style>
 </head>
 
@@ -778,6 +992,7 @@
       <div class="nav-links" id="navLinks">
         <a href="#home">Home</a>
         <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
         <a href="#portfolio">Our Work</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
@@ -885,6 +1100,132 @@
         </div>
       </div>
     </section>
+
+    
+<!-- PRICING SECTION START -->
+<section id="pricing" class="pricing-section">
+  <div class="pricing-container">
+
+    <div class="pricing-heading">
+      <span class="pricing-label">
+        SIMPLE & TRANSPARENT PRICING
+      </span>
+
+      <h2>Choose Your Website Package</h2>
+
+      <p>
+        Professional, responsive websites
+        designed to help your business grow.
+      </p>
+    </div>
+
+    <div class="pricing-grid">
+
+      <!-- STARTER -->
+      <div class="pricing-card">
+        <span class="pricing-type">STARTER</span>
+
+        <h3>Starter Website</h3>
+
+        <div class="pricing-price">
+          <small>LKR</small> 15,000
+        </div>
+
+        <p class="pricing-description">
+          Perfect for small businesses and
+          personal brands.
+        </p>
+
+        <ul class="pricing-features">
+          <li>Single-page website</li>
+          <li>Mobile responsive design</li>
+          <li>Home, About, Services & Contact</li>
+          <li>WhatsApp contact button</li>
+          <li>Basic SEO setup</li>
+          <li>1 revision round</li>
+        </ul>
+
+        <a href="#client-enquiry" class="pricing-btn">
+          Get a Quote &rarr;
+        </a>
+      </div>
+
+      <!-- BUSINESS -->
+      <div class="pricing-card pricing-featured">
+
+        <div class="pricing-badge">
+          POPULAR CHOICE
+        </div>
+
+        <span class="pricing-type">BUSINESS</span>
+
+        <h3>Business Website</h3>
+
+        <div class="pricing-price">
+          <small>LKR</small> 30,000
+        </div>
+
+        <p class="pricing-description">
+          Ideal for salons, restaurants
+          and growing businesses.
+        </p>
+
+        <ul class="pricing-features">
+          <li>Up to 5 responsive pages</li>
+          <li>Custom business design</li>
+          <li>Services & gallery sections</li>
+          <li>WhatsApp enquiry integration</li>
+          <li>Basic on-page SEO</li>
+          <li>2 revision rounds</li>
+        </ul>
+
+        <a href="#client-enquiry"
+           class="pricing-btn pricing-btn-featured">
+          Get a Quote &rarr;
+        </a>
+      </div>
+
+      <!-- PREMIUM -->
+      <div class="pricing-card">
+        <span class="pricing-type">PREMIUM</span>
+
+        <h3>Premium Website</h3>
+
+        <div class="pricing-price">
+          <small>LKR</small> 50,000+
+        </div>
+
+        <p class="pricing-description">
+          Premium custom websites for
+          ambitious businesses.
+        </p>
+
+        <ul class="pricing-features">
+          <li>Up to 8 custom pages</li>
+          <li>Premium responsive UI</li>
+          <li>Smooth animations</li>
+          <li>Advanced gallery & enquiry</li>
+          <li>Performance optimization</li>
+          <li>3 revision rounds</li>
+        </ul>
+
+        <a href="#client-enquiry" class="pricing-btn">
+          Get a Quote &rarr;
+        </a>
+      </div>
+
+    </div>
+
+    <p class="pricing-note">
+      Prices are starting estimates. Final
+      quotations depend on project requirements.
+      Domain, paid hosting and third-party
+      services are quoted separately.
+    </p>
+
+  </div>
+</section>
+<!-- PRICING SECTION END -->
 
     <!-- PORTFOLIO -->
     <section id="portfolio">

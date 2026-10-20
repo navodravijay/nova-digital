@@ -1,0 +1,9 @@
+# NV SHARP SOLUTIONS — Cloudflare Pages static-response security baseline.
+# Designed for the current portfolio site, which uses inline JS and CSS.
+# This is a limited CSP, not full XSS prevention.
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: DENY
+  Content-Security-Policy: frame-ancestors 'none'; base-uri 'self'; object-src 'none'
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()

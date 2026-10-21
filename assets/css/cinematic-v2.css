@@ -1,0 +1,63 @@
+
+/* NV SHARP SOLUTIONS
+   Cinematic Hybrid V2 — Stage 1 */
+
+.hero {
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 78% 42%,
+      rgba(77, 141, 255, .24),
+      transparent 44%),
+    radial-gradient(circle at 18% 85%,
+      rgba(77, 224, 255, .08),
+      transparent 45%),
+    #080d1b;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: linear-gradient(
+    125deg,
+    transparent 35%,
+    rgba(77, 224, 255, .035) 52%,
+    transparent 70%
+  );
+}
+
+.hero > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.orb-visual {
+  perspective: 1000px;
+}
+
+.orb-art .sgo-orb {
+  transform-style: preserve-3d;
+  animation: nv-v2-hover 12s ease-in-out infinite;
+}
+
+@keyframes nv-v2-hover {
+  0%, 100% {
+    transform: translateY(0) rotateY(-5deg);
+  }
+  50% {
+    transform: translateY(-10px) rotateY(5deg);
+  }
+}
+
+.orb-visual[data-motion="paused"] .sgo-orb {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orb-art .sgo-orb {
+    animation: none;
+    transform: none;
+  }
+}

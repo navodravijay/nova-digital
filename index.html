@@ -1221,8 +1221,96 @@
 @media(max-width:480px){.navbar .logo{font-size:clamp(14px,4.15vw,19px);letter-spacing:-.55px;white-space:nowrap}}
 @media(prefers-reduced-motion:reduce){.nv-portfolio .reveal{opacity:1;transform:none;transition:none}}
 
+
+/* Founder section — additive, scoped to NV SHARP SOLUTIONS branding. */
+.nv-founder {
+  position: relative;
+  padding: 78px 0 86px;
+  overflow: hidden;
+  background: radial-gradient(ellipse 50% 85% at 90% 50%, rgba(77,141,255,.1), transparent 85%), #080d1b;
+  border-top: 1px solid rgba(77,141,255,.16);
+  border-bottom: 1px solid rgba(77,224,255,.11);
+}
+.nv-founder-grid {
+  display: grid;
+  grid-template-columns: minmax(0,1.4fr) minmax(240px,.7fr);
+  gap: clamp(28px,5vw,80px);
+  align-items: center;
+}
+.nv-founder-copy { min-width: 0; }
+.nv-founder-copy .eyebrow { display: inline-block; margin-bottom: 19px; }
+.nv-founder-copy h2 {
+  max-width: 720px;
+  font-size: clamp(31px,4.5vw,62px);
+  letter-spacing: -.055em;
+  line-height: 1.1;
+  overflow-wrap: break-word;
+}
+.nv-founder-copy h2 span { display: block; color: #4de0ff; }
+.nv-founder-role {
+  margin: 19px 0 20px;
+  color: #aecbff;
+  font-size: clamp(13px,1.45vw,16px);
+  font-weight: 700;
+  letter-spacing: .025em;
+}
+.nv-founder-description {
+  max-width: 590px;
+  color: #a8b9d3;
+  font-size: 15px;
+  line-height: 1.85;
+}
+.nv-founder-visual {
+  position: relative;
+  isolation: isolate;
+  width: min(100%,320px);
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  justify-self: center;
+  border: 1px solid rgba(77,224,255,.2);
+  border-radius: 28px;
+  background: radial-gradient(circle at 50% 42%, rgba(77,141,255,.26), transparent 56%), linear-gradient(145deg,#111e37,#0b1528);
+  box-shadow: inset 0 1px rgba(255,255,255,.07), 0 24px 70px rgba(0,0,0,.19);
+}
+.nv-founder-visual::before {
+  content: "";
+  position: absolute;
+  inset: 15%;
+  z-index: -1;
+  border: 1px solid rgba(77,224,255,.24);
+  border-radius: 50%;
+  box-shadow: 0 0 0 22px rgba(77,141,255,.045), inset 0 0 40px rgba(77,141,255,.08);
+}
+.nv-founder-mark {
+  font-size: clamp(72px,10vw,104px);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -.085em;
+  padding-right: .1em;
+  color: #f2f8ff;
+  text-shadow: 0 0 35px rgba(77,224,255,.26);
+}
+.nv-founder-visual small {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .24em;
+  color: #82bafd;
+}
+@media (max-width: 720px) {
+  .nv-founder { padding: 64px 0; }
+  .nv-founder-grid { grid-template-columns: 1fr; gap: 34px; }
+  .nv-founder-copy h2 { font-size: clamp(32px,8vw,48px); }
+  .nv-founder-visual { width: min(100%,230px); aspect-ratio: 1.2; }
+  .nv-founder-mark { font-size: 72px; }
+}
+
 </style>
 <link href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTMiIGZpbGw9IiMwNzExMWYiLz48dGV4dCB4PSI3IiB5PSI0MyIgZmlsbD0iIzM4YmRmOCIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzIiIGZvbnQtd2VpZ2h0PSI4MDAiPk5WLjwvdGV4dD48L3N2Zz4=" rel="icon"/><link rel="stylesheet" href="assets/css/nv-face-lab-portfolio.css"/>
+<link rel="stylesheet" href="assets/css/nv-ar-portal-portfolio.css"/>
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -1419,10 +1507,10 @@
       <div class="nv-work-heading-main">
         <span class="eyebrow">Portfolio / Selected work</span>
         <h2 id="nv-portfolio-title">Designed to stand out.<br><span>Built to feel effortless.</span></h2>
-        <p>Explore our brand website, two independent design concepts, and NV. FACE LAB — an interactive computer vision experiment built in-house.</p>
+        <p>Explore our brand website, two independent design concepts, and our original NV. FACE LAB and NV. AR Portal computer vision experiences.</p>
       </div>
       <div class="nv-work-heading-side" aria-label="Project collection details">
-        <span class="nv-work-collection">SELECTED PROJECTS <strong>01—04</strong></span>
+        <span class="nv-work-collection">SELECTED PROJECTS <strong>01—05</strong></span>
         <p>Independent work &amp; clearly labeled concepts.<br>No client commissions implied.</p>
       </div>
     </div>
@@ -1460,7 +1548,7 @@
             <span class="nv-work-image-tag">RESTAURANT / CONCEPT</span>
           </div>
           <div class="nv-work-item-body">
-            <div class="nv-work-item-meta"><span>02 / 04</span><span>INDEPENDENT DESIGN CONCEPT</span></div>
+            <div class="nv-work-item-meta"><span>02 / 05</span><span>INDEPENDENT DESIGN CONCEPT</span></div>
             <h3 id="nv-project-velora-title">VELORA <span>— Fine Dining</span></h3>
             <p>A fictional restaurant experience exploring refined typography, atmospheric imagery, menu presentation, and an elegant page layout.</p>
             <div class="nv-work-item-bottom"><span>Restaurant · Responsive design</span><a class="nv-work-link" href="https://velora-restaurant-k3f.pages.dev/" target="_blank" rel="noopener noreferrer">View live demo <span aria-hidden="true">↗</span></a></div>
@@ -1476,7 +1564,7 @@
             <span class="nv-work-image-tag">BEAUTY &amp; WELLNESS / CONCEPT</span>
           </div>
           <div class="nv-work-item-body">
-            <div class="nv-work-item-meta"><span>03 / 04</span><span>INDEPENDENT DESIGN CONCEPT</span></div>
+            <div class="nv-work-item-meta"><span>03 / 05</span><span>INDEPENDENT DESIGN CONCEPT</span></div>
             <h3 id="nv-project-aura-title">AURA <span>— Beauty Salon</span></h3>
             <p>A fictional salon website concept pairing warm editorial styling with service information, gallery imagery, and a responsive layout.</p>
             <div class="nv-work-item-bottom"><span>Beauty · UI design</span><a class="nv-work-link" href="https://aura-beauty-salon.pages.dev/" target="_blank" rel="noopener noreferrer">View live demo <span aria-hidden="true">↗</span></a></div>
@@ -1510,6 +1598,31 @@
         </div>
       </article>
       <!-- /NV. FACE LAB -->
+      <!-- NV. AR PORTAL WEB · In-house project 05, no automatic camera use on this portfolio page -->
+      <article class="nvar-portfolio-card" aria-labelledby="nvar-project-title" id="nv-ar-portal-project">
+        <div class="nvar-media">
+          <a href="https://nv-ar-portal.pages.dev/" target="_blank" rel="noopener noreferrer" aria-label="Open NV. AR Portal live browser experience in a new tab">
+            <img src="Images/nv-ar-portal-web-v1.webp" width="1600" height="800" loading="lazy" decoding="async" alt="Screenshot of the NV. AR Portal Web Edition showing the Control the Unreal headline and cyan holographic portal interface before camera activation">
+            <span class="nvar-open-indicator" aria-hidden="true">OPEN EXPERIENCE ↗</span>
+          </a>
+          <span class="nvar-image-caption">SCREENSHOT / CAMERA OFF / WEB EDITION V1</span>
+        </div>
+        <div class="nvar-content">
+          <div class="nvar-kicker"><span class="nvar-live-dot" aria-hidden="true"></span> NV SHARP SOLUTIONS LAB <span class="nvar-project-count">PROJECT 05 / 05</span></div>
+          <h3 id="nvar-project-title">NV<span class="nvar-period">.</span> AR Portal <small>— Web Edition</small></h3>
+          <p>Step inside a gesture-driven holographic experience. Move your hands to shape an interactive portal and explore six real-time visual modes, directly in your browser.</p>
+          <div class="nvar-tags" aria-label="Technologies used"><span>JavaScript</span><span>MediaPipe Web</span><span>Computer Vision</span><span>Canvas</span></div>
+          <p class="nvar-privacy"><span aria-hidden="true">◇</span> Camera access is optional and user-controlled. Processing is designed to run in your browser; third-party model resources may be loaded on first use.</p>
+          <div class="nvar-footer">
+            <div class="nvar-credit">CREATED BY <strong>Navod Ravindu Jayaweera</strong></div>
+            <div class="nvar-links">
+              <a class="nvar-primary" href="https://nv-ar-portal.pages.dev/" target="_blank" rel="noopener noreferrer">Launch Live Experience <span aria-hidden="true">↗</span></a>
+              <a class="nvar-secondary" href="https://github.com/navodravijay/nv-ar-portal" target="_blank" rel="noopener noreferrer">View GitHub Source <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </div>
+      </article>
+      <!-- /NV. AR PORTAL WEB -->
     </div>
 
     <div class="nv-work-outro reveal">
@@ -1546,6 +1659,21 @@
           </a>
 </div>
 </div>
+</section>
+<!-- FOUNDER: Original NV. SHARP SOLUTIONS creator credit -->
+<section class="nv-founder" id="founder" aria-labelledby="nv-founder-title">
+  <div class="container nv-founder-grid">
+    <div class="nv-founder-copy reveal">
+      <span class="eyebrow">Meet the Creator</span>
+      <h2 id="nv-founder-title">Navod Ravindu <span>Jayaweera</span></h2>
+      <p class="nv-founder-role">Founder &amp; Developer — NV SHARP SOLUTIONS</p>
+      <p class="nv-founder-description">Building modern websites and interactive digital experiences through thoughtful design, practical development, and a security-first mindset.</p>
+    </div>
+    <div class="nv-founder-visual" aria-hidden="true">
+      <span class="nv-founder-mark">NV.</span>
+      <small>SHARP SOLUTIONS</small>
+    </div>
+  </div>
 </section>
 <!-- CONTACT -->
 

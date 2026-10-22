@@ -59,5 +59,20 @@
   .orb-art .sgo-orb {
     animation: none;
     transform: none;
+     
+/* Cinematic V2 — Interactive Depth */
+
+@media (hover: hover) and (pointer: fine) and
+       (prefers-reduced-motion: no-preference) {
+  .hero .orb-art {
+    transform: translate3d(
+      var(--nv-parallax-x, 0px),
+      var(--nv-parallax-y, 0px),
+      0
+    );
+    transition: transform 220ms ease-out;
+  }
+}
+
   }
 }

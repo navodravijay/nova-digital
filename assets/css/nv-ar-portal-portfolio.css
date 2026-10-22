@@ -1,0 +1,39 @@
+/* NV. AR Portal Web — self-contained portfolio project 05.
+   All rules scoped to .nvar-* to avoid modifying existing site functionality. */
+.nv-work-collection-grid>.nvar-portfolio-card{margin:0;min-width:0}
+.nvar-portfolio-card{--nvar-cyan:#4de0ff;--nvar-blue:#4d8dff;display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);position:relative;overflow:hidden;isolation:isolate;border:1px solid rgba(77,224,255,.29);border-radius:24px;background:radial-gradient(ellipse at 83% 15%,rgba(77,141,255,.13),transparent 66%),linear-gradient(125deg,#101c34,#080d1b 74%);color:#edf6ff;box-shadow:0 24px 75px rgba(0,4,19,.27)}
+.nvar-portfolio-card *{box-sizing:border-box}
+.nvar-portfolio-card:after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;box-shadow:inset 0 1px rgba(145,224,255,.09)}
+.nvar-media{position:relative;min-width:0;min-height:350px;background:radial-gradient(ellipse at center,rgba(77,141,255,.18),transparent 65%),#080d1b;overflow:hidden}
+.nvar-media>a{position:relative;display:block;width:100%;height:100%;min-height:350px}
+.nvar-media img{display:block;width:100%;height:100%;min-height:350px;object-fit:contain;object-position:center;background:#080d1b;padding:clamp(10px,1.8vw,18px);transition:transform .55s ease}
+.nvar-media>a:hover img,.nvar-media>a:focus-visible img{transform:scale(1.025)}
+.nvar-media:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(5,13,28,.68),transparent 32%)}
+.nvar-open-indicator{position:absolute;top:21px;right:21px;z-index:2;padding:10px 13px;border:1px solid rgba(77,224,255,.43);border-radius:50px;background:rgba(7,18,33,.9);color:#b9f9ff;font:700 10px/1.25 ui-monospace,Consolas,monospace;letter-spacing:.07em}
+.nvar-image-caption{position:absolute;bottom:21px;left:22px;z-index:2;max-width:calc(100% - 45px);color:#d7f4ff;font:700 10px/1.45 ui-monospace,Consolas,monospace;letter-spacing:.08em;pointer-events:none}
+.nvar-content{min-width:0;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:clamp(26px,3.7vw,52px)}
+.nvar-kicker{display:flex;gap:10px;align-items:center;flex-wrap:wrap;color:#89bad2;font:700 10px/1.4 ui-monospace,Consolas,monospace;letter-spacing:.1em}
+.nvar-live-dot{flex:none;width:7px;height:7px;border-radius:50%;background:var(--nvar-cyan);box-shadow:0 0 12px rgba(77,224,255,.7)}
+.nvar-project-count{color:#8a9cbd}
+.nvar-content h3{font:800 clamp(28px,3.1vw,46px)/1.08 system-ui,-apple-system,'Segoe UI',sans-serif;letter-spacing:-.045em;margin:18px 0 15px;color:#eff8ff}
+.nvar-period{color:var(--nvar-cyan)}
+.nvar-content h3 small{display:block;margin-top:8px;font:600 clamp(12px,1.1vw,15px)/1.3 ui-monospace,Consolas,monospace;color:#91b6d4;letter-spacing:.01em}
+.nvar-content>p:not(.nvar-privacy){max-width:49ch;font:400 14px/1.82 system-ui,-apple-system,'Segoe UI',sans-serif;color:#b3c6dc;margin:0 0 22px}
+.nvar-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.nvar-tags span{font:650 10px/1.15 ui-monospace,Consolas,monospace;padding:7px 9px;border:1px solid rgba(77,141,255,.3);border-radius:6px;color:#a8deee;background:rgba(77,141,255,.045)}
+.nvar-privacy{font:400 12px/1.65 system-ui,-apple-system,'Segoe UI',sans-serif;color:#87a3bc;margin:0 0 26px;max-width:58ch}
+.nvar-privacy span{color:var(--nvar-cyan);margin-right:6px}
+.nvar-footer{display:flex;flex-direction:column;gap:17px;margin-top:auto;width:100%}
+.nvar-credit{font:700 10px/1.5 ui-monospace,Consolas,monospace;letter-spacing:.07em;color:#809bb5}
+.nvar-credit strong{display:block;color:#edf5ff;font:700 13px/1.4 system-ui,-apple-system,'Segoe UI',sans-serif;letter-spacing:0}
+.nvar-links{display:flex;flex-wrap:wrap;gap:10px}
+.nvar-links a{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:44px;padding:12px 14px;border-radius:7px;font:700 12px/1.25 system-ui,-apple-system,'Segoe UI',sans-serif;text-decoration:none;transition:background .2s,border-color .2s,transform .2s}
+.nvar-links a:hover{transform:translateY(-2px)}
+.nvar-links .nvar-primary{color:#061325;background:var(--nvar-blue);border:1px solid var(--nvar-blue)}
+.nvar-links .nvar-primary:hover{background:var(--nvar-cyan);border-color:var(--nvar-cyan)}
+.nvar-links .nvar-secondary{color:#e4f5ff;border:1px solid rgba(107,173,244,.46);background:rgba(12,32,58,.3)}
+.nvar-links .nvar-secondary:hover{background:rgba(77,224,255,.1);border-color:var(--nvar-cyan)}
+.nvar-portfolio-card a:focus-visible{outline:3px solid #4de0ff;outline-offset:-4px}
+@media(max-width:900px){.nvar-portfolio-card{grid-template-columns:1fr}.nvar-media,.nvar-media>a,.nvar-media img{min-height:240px;max-height:395px}.nvar-content{padding:clamp(24px,5vw,38px)}}
+@media(max-width:520px){.nvar-portfolio-card{border-radius:15px}.nvar-content h3{font-size:30px}.nvar-media,.nvar-media>a,.nvar-media img{min-height:200px;max-height:280px}.nvar-media img{padding:8px}.nvar-open-indicator{top:12px;right:12px;font-size:9px;padding:8px}.nvar-image-caption{left:13px;bottom:13px;font-size:9px}.nvar-links a{flex:1 1 155px}}
+@media(prefers-reduced-motion:reduce){.nvar-portfolio-card *{transition:none!important;animation:none!important}.nvar-links a:hover,.nvar-media>a:hover img,.nvar-media>a:focus-visible img{transform:none}}

@@ -1,0 +1,16 @@
+# Environment secrets
+.env
+.env.*
+!.env.example
+
+# Cloudflare local secrets
+.dev.vars
+.dev.vars.*
+
+# Private keys
+*.pem
+*.key
+
+# Local dependencies and build cache
+node_modules/
+.cache/

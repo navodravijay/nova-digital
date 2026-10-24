@@ -1311,6 +1311,63 @@
 </style>
 <link href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTMiIGZpbGw9IiMwNzExMWYiLz48dGV4dCB4PSI3IiB5PSI0MyIgZmlsbD0iIzM4YmRmOCIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzIiIGZvbnQtd2VpZ2h0PSI4MDAiPk5WLjwvdGV4dD48L3N2Zz4=" rel="icon"/><link rel="stylesheet" href="assets/css/nv-face-lab-portfolio.css"/>
 <link rel="stylesheet" href="assets/css/nv-ar-portal-portfolio.css"/>
+<style id="nvsla-portfolio-styles">
+/* Project 06: SriLankan Airlines cinematic concept | scoped to prevent regressions */
+.nvsla-portfolio-card {
+  display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);
+  overflow:hidden; isolation:isolate; min-width:0;
+  background:linear-gradient(135deg,#0c1b30 0%,#0a1324 66%,#07111f 100%);
+  color:#eaf2ff; border:1px solid rgba(106,153,218,.24); border-radius:24px;
+  box-shadow:0 28px 80px rgba(0,0,0,.2);
+}
+.nvsla-portfolio-card .nvsla-media {position:relative;display:block;overflow:hidden;min-height:440px;background:linear-gradient(145deg,#18293e,#0b1929);isolation:isolate}
+.nvsla-portfolio-card .nvsla-media img {position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:49% center;display:block;transition:transform .8s cubic-bezier(.22,1,.36,1),filter .8s ease}
+.nvsla-portfolio-card .nvsla-media::after {content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(4,9,20,.28),transparent 30%,rgba(4,9,20,.1) 57%,rgba(4,9,20,.69))}
+.nvsla-portfolio-card .nvsla-media:hover img,.nvsla-portfolio-card .nvsla-media:focus-visible img {transform:scale(1.045);filter:saturate(1.06)}
+.nvsla-portfolio-card .nvsla-photo-label,.nvsla-portfolio-card .nvsla-photo-cta {position:absolute;z-index:2;color:#fff;font-weight:800;letter-spacing:.12em;font-size:10px;line-height:1.5}
+.nvsla-portfolio-card .nvsla-photo-label {top:24px;left:24px;background:rgba(7,20,34,.56);border:1px solid rgba(255,255,255,.22);padding:10px 13px;border-radius:99px}
+.nvsla-portfolio-card .nvsla-photo-cta {bottom:27px;left:26px;right:26px;display:flex;justify-content:space-between;align-items:center;gap:14px}
+.nvsla-portfolio-card .nvsla-photo-cta span {font-size:25px;font-weight:400}
+.nvsla-portfolio-card .nvsla-content {display:flex;flex-direction:column;justify-content:center;gap:19px;padding:clamp(26px,4vw,51px);min-width:0}
+.nvsla-portfolio-card .nvsla-kicker {color:#d9bb86;font-size:10px;font-weight:800;letter-spacing:.145em;line-height:1.6;display:flex;align-items:center;flex-wrap:wrap;gap:9px}
+.nvsla-portfolio-card .nvsla-kicker-dot {width:7px;height:7px;border-radius:50%;background:#d6b77e;box-shadow:0 0 0 4px rgba(214,183,126,.12)}
+.nvsla-portfolio-card .nvsla-number {margin-left:auto;color:#a4b7cc;white-space:nowrap}
+.nvsla-portfolio-card h3 {margin:0;font-size:clamp(27px,3.25vw,41px);line-height:1.19;font-weight:750;letter-spacing:-.052em;color:#f1f6ff}
+.nvsla-portfolio-card h3 span {display:block;color:#c1d5ed;font-weight:560;font-size:.73em;margin-top:8px;letter-spacing:-.03em}
+.nvsla-portfolio-card .nvsla-description {color:#bbcbde;font-size:14px;line-height:1.86;margin:0;max-width:560px}
+.nvsla-portfolio-card .nvsla-tags {display:flex;flex-wrap:wrap;gap:8px}
+.nvsla-portfolio-card .nvsla-tags span {font-size:10px;letter-spacing:.06em;font-weight:700;color:#c5e5ff;border:1px solid rgba(117,182,226,.24);background:rgba(68,125,174,.09);padding:8px 10px;border-radius:99px}
+.nvsla-portfolio-card .nvsla-disclaimer {font-size:11px;line-height:1.75;color:#9bafc8;border-left:2px solid rgba(214,183,126,.58);padding-left:13px;margin:0}
+.nvsla-portfolio-card .nvsla-footer {display:flex;flex-direction:column;gap:19px;padding-top:19px;border-top:1px solid rgba(168,197,232,.16)}
+.nvsla-portfolio-card .nvsla-credit {font-size:11px;letter-spacing:.065em;line-height:1.6;color:#d7e7f9}
+.nvsla-portfolio-card .nvsla-credit strong {color:#87c8ff;font-size:15px;letter-spacing:0}
+.nvsla-portfolio-card .nvsla-credit small {display:block;font-size:11px;letter-spacing:0;color:#95aac4;margin-top:4px}
+.nvsla-portfolio-card .nvsla-actions {display:flex;flex-wrap:wrap;gap:12px}
+.nvsla-portfolio-card .nvsla-actions a {display:inline-flex;align-items:center;justify-content:center;gap:13px;border-radius:12px;font-size:12px;font-weight:800;line-height:1.3;padding:13px 17px;min-height:44px;text-decoration:none;transition:transform .25s ease,border-color .25s ease,background-color .25s ease}
+.nvsla-portfolio-card .nvsla-action-primary {background:#cbb384;color:#091729;border:1px solid #cbb384}
+.nvsla-portfolio-card .nvsla-action-secondary {background:transparent;color:#dbe9fa;border:1px solid rgba(160,195,235,.32)}
+.nvsla-portfolio-card .nvsla-actions a:hover {transform:translateY(-2px)}
+.nvsla-portfolio-card .nvsla-action-primary:hover {background:#ead09b}
+.nvsla-portfolio-card .nvsla-action-secondary:hover {border-color:#b3cdeb;background:rgba(255,255,255,.06)}
+.nvsla-portfolio-card a:focus-visible {outline:3px solid #80caff;outline-offset:3px}
+@media (max-width:950px) {
+  .nvsla-portfolio-card {grid-template-columns:1fr}
+  .nvsla-portfolio-card .nvsla-media {min-height:0;aspect-ratio:16 / 9}
+}
+@media (max-width:620px) {
+  .nvsla-portfolio-card {border-radius:18px}
+  .nvsla-portfolio-card .nvsla-media {aspect-ratio:4 / 3}
+  .nvsla-portfolio-card .nvsla-content {padding:24px 21px;gap:17px}
+  .nvsla-portfolio-card h3 {font-size:29px}
+  .nvsla-portfolio-card .nvsla-photo-label {top:13px;left:13px;font-size:9px}
+  .nvsla-portfolio-card .nvsla-photo-cta {bottom:16px;left:17px;right:17px;font-size:9px}
+  .nvsla-portfolio-card .nvsla-number {margin-left:0}
+  .nvsla-portfolio-card .nvsla-actions a {flex:1 1 160px}
+}
+@media (prefers-reduced-motion:reduce) {
+  .nvsla-portfolio-card .nvsla-media img,.nvsla-portfolio-card .nvsla-actions a {transition:none!important;transform:none!important;filter:none!important}
+}
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -1507,10 +1564,10 @@
       <div class="nv-work-heading-main">
         <span class="eyebrow">Portfolio / Selected work</span>
         <h2 id="nv-portfolio-title">Designed to stand out.<br><span>Built to feel effortless.</span></h2>
-        <p>Explore our brand website, two independent design concepts, and our original NV. FACE LAB and NV. AR Portal computer vision experiences.</p>
+        <p>Explore our brand website, independent design concepts, and experimental browser experiences including NV. FACE LAB, NV. AR Portal, and an aviation-inspired cinematic website.</p>
       </div>
       <div class="nv-work-heading-side" aria-label="Project collection details">
-        <span class="nv-work-collection">SELECTED PROJECTS <strong>01—05</strong></span>
+        <span class="nv-work-collection">SELECTED PROJECTS <strong>01—06</strong></span>
         <p>Independent work &amp; clearly labeled concepts.<br>No client commissions implied.</p>
       </div>
     </div>
@@ -1548,7 +1605,7 @@
             <span class="nv-work-image-tag">RESTAURANT / CONCEPT</span>
           </div>
           <div class="nv-work-item-body">
-            <div class="nv-work-item-meta"><span>02 / 05</span><span>INDEPENDENT DESIGN CONCEPT</span></div>
+            <div class="nv-work-item-meta"><span>02 / 06</span><span>INDEPENDENT DESIGN CONCEPT</span></div>
             <h3 id="nv-project-velora-title">VELORA <span>— Fine Dining</span></h3>
             <p>A fictional restaurant experience exploring refined typography, atmospheric imagery, menu presentation, and an elegant page layout.</p>
             <div class="nv-work-item-bottom"><span>Restaurant · Responsive design</span><a class="nv-work-link" href="https://velora-restaurant-k3f.pages.dev/" target="_blank" rel="noopener noreferrer">View live demo <span aria-hidden="true">↗</span></a></div>
@@ -1564,7 +1621,7 @@
             <span class="nv-work-image-tag">BEAUTY &amp; WELLNESS / CONCEPT</span>
           </div>
           <div class="nv-work-item-body">
-            <div class="nv-work-item-meta"><span>03 / 05</span><span>INDEPENDENT DESIGN CONCEPT</span></div>
+            <div class="nv-work-item-meta"><span>03 / 06</span><span>INDEPENDENT DESIGN CONCEPT</span></div>
             <h3 id="nv-project-aura-title">AURA <span>— Beauty Salon</span></h3>
             <p>A fictional salon website concept pairing warm editorial styling with service information, gallery imagery, and a responsive layout.</p>
             <div class="nv-work-item-bottom"><span>Beauty · UI design</span><a class="nv-work-link" href="https://aura-beauty-salon.pages.dev/" target="_blank" rel="noopener noreferrer">View live demo <span aria-hidden="true">↗</span></a></div>
@@ -1608,7 +1665,7 @@
           <span class="nvar-image-caption">SCREENSHOT / CAMERA OFF / WEB EDITION V1</span>
         </div>
         <div class="nvar-content">
-          <div class="nvar-kicker"><span class="nvar-live-dot" aria-hidden="true"></span> NV SHARP SOLUTIONS LAB <span class="nvar-project-count">PROJECT 05 / 05</span></div>
+          <div class="nvar-kicker"><span class="nvar-live-dot" aria-hidden="true"></span> NV SHARP SOLUTIONS LAB <span class="nvar-project-count">PROJECT 05 / 06</span></div>
           <h3 id="nvar-project-title">NV<span class="nvar-period">.</span> AR Portal <small>— Web Edition</small></h3>
           <p>Step inside a gesture-driven holographic experience. Move your hands to shape an interactive portal and explore six real-time visual modes, directly in your browser.</p>
           <div class="nvar-tags" aria-label="Technologies used"><span>JavaScript</span><span>MediaPipe Web</span><span>Computer Vision</span><span>Canvas</span></div>
@@ -1623,6 +1680,32 @@
         </div>
       </article>
       <!-- /NV. AR PORTAL WEB -->
+      <!-- SriLankan Airlines — independent aviation concept / project 06 -->
+      <article class="nvsla-portfolio-card reveal" id="nvsla-airlines-project" aria-labelledby="nvsla-project-title">
+        <a class="nvsla-media" href="https://srilankan-airlines-cinematic.pages.dev/" target="_blank" rel="noopener noreferrer" aria-label="Explore the unofficial SriLankan Airlines cinematic design concept in a new tab">
+          <img src="https://srilankan-airlines-cinematic.pages.dev/assets/exterior-approved.webp" alt="Cinematic exterior view of a SriLankan Airlines-inspired aircraft over golden clouds, illustrating an independent aviation design concept" width="1672" height="941" loading="lazy" decoding="async">
+          <span class="nvsla-photo-label">AVIATION / CONCEPT STUDY</span>
+          <span class="nvsla-photo-cta">EXPLORE LIVE EXPERIENCE <span aria-hidden="true">↗</span></span>
+        </a>
+        <div class="nvsla-content">
+          <div class="nvsla-kicker"><span class="nvsla-kicker-dot" aria-hidden="true"></span> INDEPENDENT DESIGN CONCEPT <span class="nvsla-number">06 / 06</span></div>
+          <h3 id="nvsla-project-title">SriLankan Airlines <span>— Cinematic Experience</span></h3>
+          <p class="nvsla-description">An original aviation-inspired website concept with cinematic scroll sequences, a carefully directed aircraft-to-window camera transition, atmospheric imagery, and responsive visual storytelling.</p>
+          <div class="nvsla-tags" aria-label="Project disciplines and technologies">
+            <span>Creative Frontend</span><span>HTML / CSS</span><span>JavaScript</span><span>Scroll Animation</span>
+          </div>
+          <p class="nvsla-disclaimer">Independent portfolio concept. Not affiliated with, approved by, or endorsed by SriLankan Airlines. Illustrative visuals are not official airline representations.</p>
+          <div class="nvsla-footer">
+            <div class="nvsla-credit"><strong>NV.</strong> SHARP SOLUTIONS <small>Concept &amp; development by Navod Ravindu Jayaweera</small></div>
+            <div class="nvsla-actions">
+              <a class="nvsla-action-primary" href="https://srilankan-airlines-cinematic.pages.dev/" target="_blank" rel="noopener noreferrer">View Live Demo <span aria-hidden="true">↗</span></a>
+              <a class="nvsla-action-secondary" href="https://github.com/navodravijay/srilankan-airlines-cinematic" target="_blank" rel="noopener noreferrer">GitHub Source <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </div>
+      </article>
+      <!-- /SriLankan Airlines independent concept -->
+
     </div>
 
     <div class="nv-work-outro reveal">
